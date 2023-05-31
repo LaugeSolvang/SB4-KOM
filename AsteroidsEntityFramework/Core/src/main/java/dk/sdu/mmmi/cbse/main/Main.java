@@ -7,17 +7,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 	
 	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ModuleConfig.class);
 
-		Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
-		cfg.setTitle("Zombie game");
+		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
+		config.setTitle("Asteroids");
 		int width = 1440;
 		int height = 736;
-		cfg.setWindowSizeLimits(width, height, width, height);
-		cfg.setWindowedMode(width, height);
-		cfg.setResizable(false);
+		config.setWindowSizeLimits(width, height, width, height);
+		config.setWindowedMode(width, height);
+		config.setResizable(false);
 
-		new Lwjgl3Application(new Game(), cfg);
-		
+		new Lwjgl3Application(ctx.getBean(Game.class), config);
 	}
 	
 }

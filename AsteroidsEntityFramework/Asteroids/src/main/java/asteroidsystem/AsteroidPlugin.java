@@ -30,8 +30,8 @@ public class AsteroidPlugin implements IGamePluginService {
         int height = gameData.getDisplayHeight();
         int width = gameData.getDisplayWidth();
 
-        int x = (int) (Math.random() * (width - 100)) + 50; // Generate random x in range [50, width-50]
-        int y = (int) (Math.random() * (height - 100)) + 50; // Generate random y in range [50, height-50]
+        int x = (int) (Math.random() * gameData.getDisplayWidth()); // Generate random x in range [50, width-50]
+        int y = (int) (Math.random() * gameData.getDisplayHeight()); // Generate random y in range [50, height-50]
 
         asteroid.add(new PositionPart(x, y, radians));
         asteroid.add(new LifePart(3));

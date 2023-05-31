@@ -1,11 +1,11 @@
 package collisionsystem;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.GameData;
-import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
-import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
+import common.data.Entity;
+import common.data.GameData;
+import common.data.World;
+import common.data.entityparts.LifePart;
+import common.data.entityparts.PositionPart;
+import common.services.IPostEntityProcessingService;
 
 public class CollisionController implements IPostEntityProcessingService {
     @Override

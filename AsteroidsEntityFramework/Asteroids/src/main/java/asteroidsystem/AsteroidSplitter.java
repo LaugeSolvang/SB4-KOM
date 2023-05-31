@@ -2,11 +2,11 @@ package asteroidsystem;
 
 import asteroids.common.Asteroid;
 import asteroids.common.IAsteroidSplitter;
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.World;
+import common.data.Entity;
+import common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
+import common.data.entityparts.MovingPart;
+import common.data.entityparts.PositionPart;
 
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;

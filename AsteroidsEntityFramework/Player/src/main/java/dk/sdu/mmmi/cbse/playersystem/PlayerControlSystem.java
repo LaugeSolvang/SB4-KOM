@@ -1,18 +1,21 @@
 package dk.sdu.mmmi.cbse.playersystem;
 
 import bullet.common.IBullet;
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.GameData;
-import static dk.sdu.mmmi.cbse.common.data.GameKeys.LEFT;
-import static dk.sdu.mmmi.cbse.common.data.GameKeys.RIGHT;
-import static dk.sdu.mmmi.cbse.common.data.GameKeys.UP;
+import common.data.Entity;
+import common.data.GameData;
+import static common.data.GameKeys.LEFT;
+import static common.data.GameKeys.RIGHT;
+import static common.data.GameKeys.UP;
+import static java.util.stream.Collectors.toList;
 
-import dk.sdu.mmmi.cbse.common.data.GameKeys;
-import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
-import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
-import dk.sdu.mmmi.cbse.common.utilities.SPILocator;
+import common.data.GameKeys;
+import common.data.World;
+import common.data.entityparts.MovingPart;
+import common.data.entityparts.PositionPart;
+import common.services.IEntityProcessingService;
+
+import java.util.Collection;
+import java.util.ServiceLoader;
 
 /**
  *
@@ -32,7 +35,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
             movingPart.setUp(gameData.getKeys().isDown(UP));
 
             if (gameData.getKeys().isDown(GameKeys.SPACE)) {
-                for (IBullet bullet : SPILocator.locateAll(IBullet.class)) {
+                for (IBullet bullet : getBulletSPIs()) {
                     world.addEntity(bullet.createBullet(player, gameData));
                 }
             }
@@ -68,4 +71,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
         entity.setShapeY(shapey);
     }
 
+    private Collection<? extends IBullet> getBulletSPIs() {
+        return ServiceLoader.load(IBullet.class).stream().map(ServiceLoader.Provider::get).collect(toList());
+    }
 }

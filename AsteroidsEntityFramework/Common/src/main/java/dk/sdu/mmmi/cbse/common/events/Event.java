@@ -1,6 +1,6 @@
 package dk.sdu.mmmi.cbse.common.events;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
+import common.data.Entity;
 import java.io.Serializable;
 
 /**

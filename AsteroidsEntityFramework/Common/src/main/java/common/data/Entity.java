@@ -1,6 +1,7 @@
-package dk.sdu.mmmi.cbse.common.data;
+package common.data;
 
-import dk.sdu.mmmi.cbse.common.data.entityparts.EntityPart;
+import common.data.entityparts.EntityPart;
+
 import java.io.Serializable;
 import java.util.Map;
 import java.util.UUID;
@@ -8,7 +9,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Entity implements Serializable {
     private final UUID ID = UUID.randomUUID();
-
     private float[] shapeX = new float[4];
     private float[] shapeY = new float[4];
     private float radius;

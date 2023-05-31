@@ -1,6 +1,6 @@
 package bullet.common;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
+import common.data.Entity;
 
 public class Bullet extends Entity {
 }

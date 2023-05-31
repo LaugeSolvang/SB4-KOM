@@ -1,7 +1,7 @@
-package dk.sdu.mmmi.cbse.common.data.entityparts;
+package common.data.entityparts;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.GameData;
+import common.data.GameData;
+import common.data.Entity;
 
 public class TimerPart implements EntityPart {
 

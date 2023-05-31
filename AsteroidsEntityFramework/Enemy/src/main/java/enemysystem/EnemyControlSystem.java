@@ -1,12 +1,12 @@
 package enemysystem;
 
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.GameData;
-import dk.sdu.mmmi.cbse.common.data.World;
+import common.data.Entity;
+import common.data.GameData;
+import common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
-import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
+import common.data.entityparts.MovingPart;
+import common.data.entityparts.PositionPart;
+import common.services.IEntityProcessingService;
 import enemy.common.Enemy;
 
 import java.util.Random;

@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.common.data;
+package common.data;
 
 import dk.sdu.mmmi.cbse.common.events.Event;
 import java.util.ArrayList;

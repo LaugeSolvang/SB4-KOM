@@ -25,12 +25,12 @@ public class CollisionController implements IPostEntityProcessingService {
         }
     }
 
-    private boolean isColliding(Entity firstEntity, Entity secondEntity) {
+    boolean isColliding(Entity firstEntity, Entity secondEntity) {
         // Get position parts and calculate distance between centers
         PositionPart firstPosition = firstEntity.getPart(PositionPart.class);
         PositionPart secondPosition = secondEntity.getPart(PositionPart.class);
-        float dx = (float) (firstPosition.getX() - secondPosition.getX());
-        float dy = (float) (firstPosition.getY() - secondPosition.getY());
+        float dx = firstPosition.getX() - secondPosition.getX();
+        float dy = firstPosition.getY() - secondPosition.getY();
         float distance = (float) Math.sqrt(dx * dx + dy * dy);
 
         // Check if the distance is less than the sum of the radii
@@ -38,7 +38,7 @@ public class CollisionController implements IPostEntityProcessingService {
         return (distance < sumRadii);
     }
 
-    private void handleCollision(Entity firstEntity, Entity secondEntity, World world) {
+    void handleCollision(Entity firstEntity, Entity secondEntity, World world) {
         // Reduce life of the first entity and mark as hit
         LifePart lifePart = firstEntity.getPart(LifePart.class);
         if (lifePart.getLife() > 0) {

@@ -1,26 +1,28 @@
-package enemysystem;
+package playersystem;
 
 import common.data.Entity;
 import common.data.GameData;
 import common.data.World;
-import common.data.entityparts.LifePart;
 import common.data.entityparts.MovingPart;
 import common.data.entityparts.PositionPart;
 import common.services.IGamePluginService;
-import enemy.common.Enemy;
 
-public class EnemyPlugin implements IGamePluginService {
+public class PlayerPlugin implements IGamePluginService {
 
-    private Entity enemy;
+    private Entity player;
+
+    public PlayerPlugin() {
+    }
 
     @Override
     public void start(GameData gameData, World world) {
+        
         // Add entities to the world
-        enemy = createEnemyShip(gameData);
-        world.addEntity(enemy);
+        player = createPlayerShip(gameData);
+        world.addEntity(player);
     }
 
-    private Entity createEnemyShip(GameData gameData) {
+    private Entity createPlayerShip(GameData gameData) {
 
         float deacceleration = 10;
         float acceleration = 200;
@@ -29,18 +31,18 @@ public class EnemyPlugin implements IGamePluginService {
         float x = gameData.getDisplayWidth() / 2;
         float y = gameData.getDisplayHeight() / 2;
         float radians = 3.1415f / 2;
-
-        Entity enemyShip = new Enemy();
-        enemyShip.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
-        enemyShip.add(new PositionPart(x, y, radians));
-        enemyShip.add(new LifePart(1));
-
-        return enemyShip;
+        
+        Entity playerShip = new Player();
+        playerShip.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
+        playerShip.add(new PositionPart(x, y, radians));
+        
+        return playerShip;
     }
 
     @Override
     public void stop(GameData gameData, World world) {
         // Remove entities
-        world.removeEntity(enemy);
+        world.removeEntity(player);
     }
+
 }

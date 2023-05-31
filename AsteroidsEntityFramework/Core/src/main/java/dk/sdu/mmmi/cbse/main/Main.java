@@ -1,21 +1,22 @@
 package dk.sdu.mmmi.cbse.main;
 
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 	
 	public static void main(String[] args) {
-		
-		LwjglApplicationConfiguration cfg =
-			new LwjglApplicationConfiguration();
-		cfg.title = "Asteroids";
-		cfg.width = 1000;
-		cfg.height = 800;
-		cfg.useGL30 = false;
-		cfg.resizable = false;
-		
-		new LwjglApplication(new Game(), cfg);
+
+		Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
+		cfg.setTitle("Zombie game");
+		int width = 1440;
+		int height = 736;
+		cfg.setWindowSizeLimits(width, height, width, height);
+		cfg.setWindowedMode(width, height);
+		cfg.setResizable(false);
+
+		new Lwjgl3Application(new Game(), cfg);
 		
 	}
 	

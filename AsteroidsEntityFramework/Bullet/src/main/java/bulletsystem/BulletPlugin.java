@@ -1,10 +1,10 @@
 package bulletsystem;
 
 import bullet.common.Bullet;
-import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.cbse.common.data.GameData;
-import dk.sdu.mmmi.cbse.common.data.World;
-import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+import common.data.Entity;
+import common.data.GameData;
+import common.data.World;
+import common.services.IGamePluginService;
 
 public class BulletPlugin implements IGamePluginService {
 

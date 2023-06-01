@@ -11,8 +11,8 @@ public class Main {
 
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setTitle("Asteroids");
-		int width = 1440;
-		int height = 736;
+		int width = 1240;
+		int height = 636;
 		config.setWindowSizeLimits(width, height, width, height);
 		config.setWindowedMode(width, height);
 		config.setResizable(false);

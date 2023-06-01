@@ -5,6 +5,7 @@ import common.data.GameData;
 import common.data.World;
 import common.data.entityparts.LifePart;
 import common.data.entityparts.PositionPart;
+
 import common.services.IPostEntityProcessingService;
 
 public class CollisionController implements IPostEntityProcessingService {
